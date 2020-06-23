@@ -63,9 +63,6 @@ public class GroupOfCards {
 		return this.attribute2;
 	}
 
-	public ArrayList<Card> getCards() {
-		// TODO - implement GroupOfCards.getCards
-		throw new UnsupportedOperationException();
-	}
+	
 
 }//end class
