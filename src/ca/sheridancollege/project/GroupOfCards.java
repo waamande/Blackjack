@@ -18,8 +18,10 @@ import java.util.Collections;
 public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
-    private int size;//the size of the grouping
+    private ArrayList<Card> attribute;
+    private int size;
+	private ArrayList<Card> attribute2;
+	private ArrayList<Card> cards;//the size of the grouping
 
     public GroupOfCards(int size) {
         this.size = size;
@@ -30,8 +32,8 @@ public class GroupOfCards {
      *
      * @return the group of cards.
      */
-    public ArrayList<Card> getCards() {
-        return cards;
+    public ArrayList<Card> getAttribute() {
+        return attribute;
     }
 
     public void shuffle() {
@@ -51,5 +53,19 @@ public class GroupOfCards {
     public void setSize(int size) {
         this.size = size;
     }
+
+	public ArrayList<Card> getCards() {
+		// TODO - implement GroupOfCards.getCards
+		throw new UnsupportedOperationException();
+	}
+
+	public ArrayList<Card> getAttribute2() {
+		return this.attribute2;
+	}
+
+	public ArrayList<Card> getCards() {
+		// TODO - implement GroupOfCards.getCards
+		throw new UnsupportedOperationException();
+	}
 
 }//end class

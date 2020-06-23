@@ -28,22 +28,24 @@ public abstract class Game {
      * @return the name
      */
     public String getName() {
-        return name;
-    }
+		return this.name;
+	}
 
     /**
      * @return the players of this game
      */
     public ArrayList<Player> getPlayers() {
-        return players;
-    }
+		return this.players;
+	}
+
+	
 
     /**
      * @param players the players of this game
      */
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
+   public void setPlayers(ArrayList<Player> players) {
+		this.players = players;
+	}
 
     /**
      * Play the game. This might be one method or many method calls depending on your game.
@@ -54,5 +56,12 @@ public abstract class Game {
      * When the game is over, use this method to declare and display a winning player.
      */
     public abstract void declareWinner();
+
+	
+
+	
+	
+
+
 
 }//end class
