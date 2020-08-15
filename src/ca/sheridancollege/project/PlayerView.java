@@ -3,16 +3,25 @@ package ca.sheridancollege.project;
 import java.util.Scanner;
 
 /**
- *
- * @author singh
+ * This class acts as interface and interacts with user.
+ * 
+ * @author Daljeet Singh
+ * @version 1.0
  */
 public class PlayerView {
     private PlayerController playerController;
 
+    /**
+     *  Default no-arg constructor of the class which initializes the instance
+     *  of class PlayerController.
+     */
     public PlayerView() {
         playerController = new PlayerController();
     }
 
+    /**
+     * Prompts the user for name and betChips and then use them to create a player.
+     */
     public void run() {
             Scanner input = new Scanner(System.in);
             boolean exitFlag = false;
