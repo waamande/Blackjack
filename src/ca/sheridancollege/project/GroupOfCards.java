@@ -11,6 +11,7 @@ import java.util.*;
 public class GroupOfCards {
     private ArrayList<Card> cards;
     int cardSum;
+    private Random random = new Random();
 
     /**
      * Default no-arg constructor which initializes the array list of class GroupOfCards.
@@ -18,6 +19,10 @@ public class GroupOfCards {
     public GroupOfCards()
     {
         cards =  new ArrayList<Card>();
+        Card card1 = new Card(RANK.values()[random.nextInt(13)],SUIT.values()[random.nextInt(13)]);
+        cards.add(card1);
+        Card card2 = new Card(RANK.values()[random.nextInt(13)],SUIT.values()[random.nextInt(13)]);
+        cards.add(card2);
     }
 
     /**
@@ -26,6 +31,14 @@ public class GroupOfCards {
      * @return An integer representing the sum of values of cards. 
      */
     public int getCardSum() {
+        Card[] array = new Card[10];
+        cards.toArray(array);
+        cardSum=0;
+        for(int i=0;i<array.length;i++)
+        {
+            RANK rank= array[i].getRank();
+            cardSum = rank.getVal();
+        }
         return cardSum;
     }
 
@@ -38,7 +51,12 @@ public class GroupOfCards {
         this.cardSum = cardSum;
     }
 
-    //public Card cardGenerator()
+    public Card cardGenerator()
+    {
+        Card card = new Card(RANK.values()[random.nextInt(13)],SUIT.values()[random.nextInt(13)]);
+        cards.add(card);
+        return card;
+    }
     //public void playerCardComparison()
     //public void dealerCardComparison()
     //publcic String toString()
