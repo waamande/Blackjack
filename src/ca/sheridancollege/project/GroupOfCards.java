@@ -60,4 +60,12 @@ public class GroupOfCards {
     //public void playerCardComparison()
     //public void dealerCardComparison()
     //publcic String toString()
+    public void display()
+    {
+        int i=1;
+        for(Card a: cards)
+        {
+            System.out.println("Card "+i+": "+a.getRank().getRankText()+" of "+a.getSuit().getSuitText());
+        }
+    }
 }
