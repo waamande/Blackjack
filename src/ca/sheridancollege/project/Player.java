@@ -1,14 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ca.sheridancollege.project;
 
 /**
  *
- * @author singh
+ * @author Daljeet Singh
  */
 public class Player {
-    
+    private String name;
+    private int betChips;
+    private GroupOfCards cardPack1;
+    private GroupOfCards cardPack2;
+
+    public Player()
+    {
+        cardPack1 = new GroupOfCards();
+        cardPack2 = new GroupOfCards();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getBetChips() {
+        return betChips;
+    }
+
+    public void setBetChips(int betChips) {
+        this.betChips = betChips;
+    }
 }
