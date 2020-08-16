@@ -122,7 +122,7 @@ public class BlackJack
             System.out.println("Player " + getInstance().getPlayerView().getPlayerController().getPlayers().get(i).getName() + " cards are as follows:");
             game.displayCards(getInstance().getPlayerView().getPlayerController().getPlayers().get(i).getCardPack1()); 
             cardSum.calculateCardSum(getInstance().getPlayerView().getPlayerController().getPlayers().get(i).getCardPack1());
-            int y = playerComparison.playerCardComparison(i);
+            int y = playerComparison.playerCardComparison(i, getInstance().getPlayerView().getPlayerController().getPlayers().get(i));
             if(y == 1)
             {
                 i--;

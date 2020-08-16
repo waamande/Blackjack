@@ -18,7 +18,7 @@ public class PlayerDealerCardComparison
         
         for(int i=0; i<size; i++)
         {
-            if(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(i).isSplit())
+            if(players.get(i).isSplit())
             {
                 count2 = 0;
                 if(!players.get(i).getCardPack1().getCards().isEmpty())

@@ -17,7 +17,7 @@ public class DoubleDown
 
         player.setBetChips(player.getBetChips() * 2);
 
-        System.out.println("Player " + player.getName() + " got doubled.");
+        System.out.println("Player " + player.getName() + " chips got doubled.");
         game.hit(cards);
         if (cards.getCardSum() > 21) 
         {
