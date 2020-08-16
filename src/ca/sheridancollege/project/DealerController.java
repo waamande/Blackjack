@@ -6,24 +6,18 @@ package ca.sheridancollege.project;
  * 
  * @version 1.0
  */
-public class DealerController {
-    private Dealer dealer;
-
-    /**
-     * Default no-arg constructor which initializes the instance of class Dealer. 
-     */
-    public DealerController()
-    {
-        dealer = Dealer.getInstance();
-    }
-    
-    /**
-     * Creates the dealer.
-     * 
-     * @param name A string representing the name of dealer.
-     */
+public class DealerController 
+{
     public void createDealer(String name)
     {
-        dealer.setName(name);
+        Dealer.getInstance().setName(name);
+        
+        CardGenerator generator = new CardGenerator();
+        GroupOfCards cards = new GroupOfCards();
+        
+        cards.getCards().add(generator.cardGenerator());
+        cards.getCards().add(generator.cardGenerator());
+        
+        Dealer.getInstance().setCardPack(cards);
     }
 }

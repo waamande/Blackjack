@@ -6,55 +6,66 @@ package ca.sheridancollege.project;
  * @author Daljeet Singh
  * @version 1.0
  */
-public class Player {
+public class Player 
+{
     private String name;
     private int betChips;
     private GroupOfCards cardPack1;
     private GroupOfCards cardPack2;
+    private boolean split = false;
 
-    /**
-     * Default no-arg constructor of class which initializes the two instances 
-     * of class GroupOfCards.
-     */
+   
     public Player()
     {
         cardPack1 = new GroupOfCards();
         cardPack2 = new GroupOfCards();
     }
 
-    /**
-     * Get the name of player of the game.
-     * 
-     * @return A string representing the name of player.
-     */
-    public String getName() {
+   
+    public String getName() 
+    {
         return name;
     }
 
-    /**
-     * Set the name of player of the game.
-     * 
-     * @param name A string representing the name of player.
-     */
-    public void setName(String name) {
+    
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
-    /**
-     * Get the chips bet by player.
-     * 
-     * @return An integer representing the chips bet by player.
-     */
-    public int getBetChips() {
+    public int getBetChips() 
+    {
         return betChips;
     }
 
-    /**
-     * Set the chips for bet by player
-     * 
-     * @param betChips An integer representing the chips bet by player.
-     */
-    public void setBetChips(int betChips) {
+    public void setBetChips(int betChips) 
+    {
         this.betChips = betChips;
+    }
+
+    public boolean isSplit() 
+    {
+        return split;
+    }
+
+    public void setSplit(boolean split) 
+    {
+        this.split = split;
+    }
+
+   
+    public GroupOfCards getCardPack1() 
+    {
+        return cardPack1;
+    }
+
+    public void setCardPack1(GroupOfCards cardPack1) 
+    {
+        this.cardPack1 = cardPack1;
+    }
+
+    public GroupOfCards getCardPack2() 
+    {
+        return cardPack2;
     }
 }

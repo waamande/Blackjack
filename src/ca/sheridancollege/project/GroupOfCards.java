@@ -8,38 +8,45 @@ import java.util.*;
  * 
  * @version 1.0
  */
-public class GroupOfCards {
-    private ArrayList<Card> cards;
-    int cardSum;
+public class GroupOfCards 
+{
+    private ArrayList<Card> cards = null;
+    private int cardSum = 0;
+    private int countForSum = 0;
 
-    /**
-     * Default no-arg constructor which initializes the array list of class GroupOfCards.
-     */
+    
     public GroupOfCards()
     {
         cards =  new ArrayList<Card>();
     }
 
-    /**
-     * Gets the sum of values of cards.
-     * 
-     * @return An integer representing the sum of values of cards. 
-     */
-    public int getCardSum() {
+    
+    public int getCardSum() 
+    {
         return cardSum;
     }
 
-    /**
-     * Sets the sum of value of cards.
-     * 
-     * @param cardSum An integer representing the sum of values of cards. 
-     */
-    public void setCardSum(int cardSum) {
-        this.cardSum = cardSum;
+   
+    public void setCardSum(int cardSum) 
+    {
+        this.cardSum += cardSum;
+    }
+    
+    public ArrayList<Card> getCards() 
+    {
+        return cards;
+    }   
+    
+    public int getCountForSum() 
+    {
+        return countForSum;
     }
 
-    //public Card cardGenerator()
-    //public void playerCardComparison()
-    //public void dealerCardComparison()
-    //publcic String toString()
+    public void setCountForSum(int countForSum) 
+    {
+        this.countForSum = countForSum;
+    }
+
+    
+    
 }

@@ -7,26 +7,27 @@ import java.util.Scanner;
  * 
  * @version 1.0
  */
-public class DealerView {
+public class DealerView 
+{
     private DealerController dealerController;
 
-    /**
-     * Default no-arg constructor which initializes the instance of class DealerController.
-     */
+    
     public DealerView()
     {
         dealerController =  new DealerController();
     }
 
-    /**
-     * Prompts the user for name and creates a dealer.
-     */
-    public void run() {
+    
+    public void run() 
+    {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter the name");
+        System.out.print("Please enter Dealer's name: ");
         String name = input.nextLine();
         dealerController.createDealer(name);
     }
 
-    //public void displayCards()
+    public DealerController getDealerController() 
+    {
+        return dealerController;
+    }
 }

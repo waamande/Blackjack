@@ -5,24 +5,30 @@ package ca.sheridancollege.project;
  * 
  * @version 1.0
  */
-public class Card {
+public class Card 
+{
     private int value;
+    private int blackjackCardValue;
 
-    /**
-     * Gets the value of card.
-     * 
-     * @return An integer representing the value of card.  
-     */
-    public int getValue() {
+    
+    public int getValue() 
+    {
         return value;
     }
     
-    /**
-     * Sets the value of card.
-     * 
-     * @param value An integer representing the value of card. 
-     */
-    public void setValue(int value) {
+    
+    public void setValue(int value) 
+    {
         this.value = value;
     }
+
+    public int getBlackjackCardValue() {
+        return blackjackCardValue;
+    }
+
+    public void setBlackjackCardValue(int blackjackCardValue) {
+        this.blackjackCardValue = blackjackCardValue;
+    }
+    
+    
 }

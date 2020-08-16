@@ -8,38 +8,51 @@ import java.util.Scanner;
  * @author Daljeet Singh
  * @version 1.0
  */
-public class PlayerView {
+public class PlayerView 
+{
     private PlayerController playerController;
 
-    /**
-     *  Default no-arg constructor of the class which initializes the instance
-     *  of class PlayerController.
-     */
-    public PlayerView() {
+    
+    public PlayerView() 
+    {
         playerController = new PlayerController();
     }
 
-    /**
-     * Prompts the user for name and betChips and then use them to create a player.
-     */
-    public void run() {
-            Scanner input = new Scanner(System.in);
-            boolean exitFlag = false;
-            do {
-                System.out.println("Please enter the name");
-                String name = input.nextLine();
-                System.out.println("Please enter number of chips you want to bet");
-                int betChips = input.nextInt();
-                playerController.createPlayer(name, betChips);
-                System.out.println("Do you want to continue ?Y/N");
-                String temp = input.nextLine();
-                if (temp.compareToIgnoreCase("N") == 0) {
-                    exitFlag = true;
-                }
-            } while (exitFlag != true);
-        }
+  
+    public void run(int playerNumber) 
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter Player " + playerNumber + " name: ");
+        String name = input.nextLine();
+        System.out.print("Please enter number of chips you want to bet: ");
+        int betChips = input.nextInt();
+        playerController.createPlayer(name, betChips);
     }
 
-    //public void displayCards();
+    public PlayerController getPlayerController() 
+    {
+        return playerController;
+    }
+    
+   
+   public int getAceValue(int cardNumber)
+   {
+       Scanner scanner = new Scanner(System.in);
+       int x=0;
+       int value=0;
+       while(x==0)
+       {
+           System.out.print("Enter value for Card " +cardNumber + " Ace(1 or 11): ");
+           value = scanner.nextInt();
+           if(value==1 || value==11)
+           {
+               x=1;
+           }
+       }
+       return value;
+   }
+}
+
+  
 
 
