@@ -55,4 +55,20 @@ public class PlayerDealerCardComparisonTest {
         boolean result = player.getCardPack1().getCardSum() < Dealer.getInstance().getCardPack().getCardSum();
         assertEquals(expResult, result);
        }
+    
+    
+     /**
+     * Test of PlayerDealerCardComparison method, of class PlayerDealerCardComparison.
+     * Testing a method for player  and dealer push condition
+     */
+    @Test
+    public void testPlayerDealerCardComparisonPush() {
+        System.out.println("PlayerDealerCardComparisonPlayerDealerPush");
+        Player player = new Player();
+        player.getCardPack1().setCardSum(18);
+        Dealer.getInstance().getCardPack().setCardSum(18);
+        boolean expResult = false;
+        boolean result = player.getCardPack1().getCardSum() == Dealer.getInstance().getCardPack().getCardSum();
+        assertEquals(expResult, result);
+       }
 }
