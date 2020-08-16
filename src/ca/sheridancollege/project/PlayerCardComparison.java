@@ -52,42 +52,86 @@ public class PlayerCardComparison
                     BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCards().add(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCards().get(0));
                     System.out.println("For Second card pack: ");
                     game.hit(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2());
-
-                    System.out.print("Do you want to hit for first pack(yes or no): ");
-                    String hit = scanner.next();
-                    while (hit.equalsIgnoreCase("yes")) 
+                    
+                    int z = 0;
+                    if((BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCardSum() == 9) || (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCardSum() == 10) || (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCardSum() == 11))
                     {
-                        System.out.println("For first card pack:");
-                        game.hit(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
-                        if (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCardSum() <= 21) 
+                        System.out.print("Do you want to Double down(yes or no): ");
+                        String doubleDown = scanner.next();
+                        if(doubleDown.equalsIgnoreCase("yes"));
                         {
-                            System.out.print("Do you want to hit for first pack(yes or no): ");
-                            hit = scanner.next();
-                        } 
-                        else
-                        {
-                            hit = "no";
-                            game.declarePlayerLoser(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
-                            count++;
+                            DoubleDown dDown = new DoubleDown();
+                            int r = dDown.doubleDown(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num), BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
+                            z=1;
+                            if(r==1)
+                            {
+                                BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCards().clear();
+                                count++;
+                            }
                         }
                     }
-
-                    System.out.print("Do you want to hit for second pack(yes or no): ");
-                    hit = scanner.next();
-                    while (hit.equalsIgnoreCase("yes")) 
+                    
+                    if(z==0)
                     {
-                        System.out.println("For Second card pack: ");
-                        game.hit(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2());
-                        if (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCardSum() <= 21) 
+                        System.out.print("Do you want to hit for first pack(yes or no): ");
+                        String hit = scanner.next();
+                        while (hit.equalsIgnoreCase("yes")) 
                         {
-                            System.out.print("Do you want to hit for second pack(yes or no): ");
-                            hit = scanner.next();
+                            System.out.println("For first card pack:");
+                            game.hit(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
+                            if (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCardSum() <= 21) 
+                            {
+                                System.out.print("Do you want to hit for first pack(yes or no): ");
+                                hit = scanner.next();
+                            } 
+                            else
+                            {
+                                hit = "no";
+                                game.declarePlayerLoser(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
+                                BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCards().clear();
+                                count++;
+                            }
                         }
-                        else
+                    }
+                    
+                    z=0;
+                    if((BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCardSum() == 9) || (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCardSum() == 10) || (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCardSum() == 11))
+                    {
+                        System.out.print("Do you want to Double down(yes or no): ");
+                        String doubleDown = scanner.next();
+                        if(doubleDown.equalsIgnoreCase("yes"));
                         {
-                            hit = "no";
-                            game.declarePlayerLoser(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2());
-                            count++;
+                            DoubleDown dDown = new DoubleDown();
+                            int r = dDown.doubleDown(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num), BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2());
+                            z=1;
+                            if(r == 1)
+                            {
+                                BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCards().clear();
+                                count++;
+                            }
+                        }
+                    }
+                    
+                    if(z==0)
+                    {
+                        System.out.print("Do you want to hit for second pack(yes or no): ");
+                        String hit = scanner.next();
+                        while (hit.equalsIgnoreCase("yes")) 
+                        {
+                            System.out.println("For Second card pack: ");
+                            game.hit(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2());
+                            if (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCardSum() <= 21) 
+                            {
+                                System.out.print("Do you want to hit for second pack(yes or no): ");
+                                hit = scanner.next();
+                            }
+                            else
+                            {
+                                hit = "no";
+                                game.declarePlayerLoser(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2());
+                                BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack2().getCards().clear();
+                                count++;
+                            }
                         }
                     }
 
@@ -103,15 +147,12 @@ public class PlayerCardComparison
         {
             System.out.print("Do you want to Double down(yes or no): ");
             String doubleDown = scanner.next();
-            
-            if(doubleDown.equalsIgnoreCase("yes"))
+            if(doubleDown.equalsIgnoreCase("yes"));
             {
-                System.out.println("Player " + BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getName() + " got doubled.");
-                BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).setBetChips(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getBetChips()*2);
-                game.hit(BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
-                if (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1().getCardSum() > 21) 
+                DoubleDown dDown = new DoubleDown();
+                int r = dDown.doubleDown(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num), BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
+                if(r==1)
                 {
-                    game.declarePlayerLoser(num, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getCardPack1());
                     BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().remove(num);
                     return 1;
                 }

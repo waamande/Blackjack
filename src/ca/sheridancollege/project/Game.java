@@ -31,11 +31,11 @@ public class Game
                         System.out.print("Ace ");
                         break;
                     default:
-                        System.out.println(cardPack.getCards().get(i).getValue());
+                        System.out.print(cardPack.getCards().get(i).getValue() + " ");
                         break;
                 }
             }
-            System.out.println(".\n");
+            System.out.println("\n");
             System.out.println("Score: " + (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getBetChips()*3)/2);
         }
         else if(winType == 2)
@@ -58,11 +58,11 @@ public class Game
                         System.out.print("Ace ");
                         break;
                     default:
-                        System.out.println(cardPack.getCards().get(i).getValue());
+                        System.out.print(cardPack.getCards().get(i).getValue() + " ");
                         break;
                 }
             }
-            System.out.println(".\n");
+            System.out.println("\n");
             System.out.println("Score: " + (BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(num).getBetChips()*2));
         }
     }
@@ -92,11 +92,11 @@ public class Game
                     System.out.print("Ace ");
                     break;
                 default:
-                    System.out.print(cardPack.getCards().get(i).getValue());
+                    System.out.print(cardPack.getCards().get(i).getValue() + " ");
                     break;
             }
         }
-        System.out.println(".\n");
+        System.out.println("\n");
     }
     
     
@@ -126,11 +126,11 @@ public class Game
                         System.out.print("Ace ");
                         break;
                     default:
-                        System.out.println(Dealer.getInstance().getCardPack().getCards().get(i).getValue());
+                        System.out.print(Dealer.getInstance().getCardPack().getCards().get(i).getValue() + " ");
                         break;
                 }
             }
-            System.out.println(".\n");
+            System.out.println("\n");
         }
         else if(winType == 2)
         {
@@ -152,11 +152,11 @@ public class Game
                         System.out.print("Ace ");
                         break;
                     default:
-                        System.out.println(Dealer.getInstance().getCardPack().getCards().get(i).getValue());
+                        System.out.print(Dealer.getInstance().getCardPack().getCards().get(i).getValue() + " ");
                         break;
                 }
             }
-            System.out.println(".\n");
+            System.out.println("\n");
         }
     }
     
@@ -185,11 +185,11 @@ public class Game
                     System.out.print("Ace ");
                     break;
                 default:
-                    System.out.println(Dealer.getInstance().getCardPack().getCards().get(i).getValue());
+                    System.out.print(Dealer.getInstance().getCardPack().getCards().get(i).getValue() + " ");
                     break;
             }
         }
-        System.out.println(".\n");
+        System.out.println("\n");
     }
     
     

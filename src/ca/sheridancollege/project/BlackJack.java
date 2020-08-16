@@ -126,6 +126,7 @@ public class BlackJack
             if(y == 1)
             {
                 i--;
+                size--;
             }
         }
         

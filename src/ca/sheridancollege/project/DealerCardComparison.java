@@ -25,12 +25,16 @@ public class DealerCardComparison
                 else
                 {
                     game.declarePlayerLoser(i, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(i).getCardPack1());
+                    BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().remove(i);
                 }
+                i--;
+                size--;
             }
             System.exit(0);
         }
         else if(Dealer.getInstance().getCardPack().getCardSum() <= 16)
         {
+            System.out.println("Hit:->");
             game.hit(Dealer.getInstance().getCardPack());
             if( Dealer.getInstance().getCardPack().getCardSum() > 21)
             {
@@ -42,11 +46,15 @@ public class DealerCardComparison
                      {
                          game.declarePlayerWinner(i, 2, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(i).getCardPack1());
                          game.declarePlayerWinner(i, 2, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(i).getCardPack2());
+                         BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().remove(i);
                      }
                      else
                      {
                          game.declarePlayerWinner(i, 2, BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().get(i).getCardPack1());
+                         BlackJack.getInstance().getPlayerView().getPlayerController().getPlayers().remove(i);
                      }
+                     i--;
+                     size--;
                 }
                 System.exit(0);
             }
